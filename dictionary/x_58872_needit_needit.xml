@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" label="NeedIt" max_length="40" name="x_58872_needit_needit" sizeclass="0" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Description" max_length="1000" name="description" type="string"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Priority" max_length="40" name="priority" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Very high" sequence="0" value="Very high"/>
+                <element inactive_on_update="false" label="High" sequence="1" value="High"/>
+                <element inactive_on_update="false" label="Moderatye" sequence="2" value="Moderatye"/>
+                <element inactive_on_update="false" label="Low" sequence="3" value="Low"/>
+            </choice>
+        </element>
+        <element attributes="encode_utf8=false" label="requested by" mandatory="true" max_length="32" name="requested_by" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" default="legal" label="requested for" mandatory="true" max_length="40" name="requested_for" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Human Resources" sequence="0" value="Human Resources"/>
+                <element inactive_on_update="false" label="Facilities" sequence="1" value="Facilities"/>
+                <element inactive_on_update="false" label="legal" sequence="2" value="legal"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="short description" max_length="100" name="short_description" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="State" max_length="40" name="state" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Requested" sequence="0" value="Requested"/>
+                <element inactive_on_update="false" label="Waiting Approval" sequence="1" value="Waiting Approval"/>
+                <element inactive_on_update="false" label="Approved" sequence="2" value="Approved"/>
+                <element inactive_on_update="false" label="Awaiting feedback" sequence="3" value="Awaiting feedback"/>
+                <element inactive_on_update="false" label="Closed complete" sequence="4" value="Closed complete"/>
+                <element inactive_on_update="false" label="Withdrawn" sequence="5" value="Withdrawn"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="other" max_length="40" name="u_other" type="string"/>
+        <element attributes="encode_utf8=false" label="Requested for" mandatory="true" max_length="32" name="u_requested_for" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Request type" mandatory="true" max_length="40" name="u_request_type" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Human Resource" sequence="0" value="hr"/>
+                <element inactive_on_update="false" label="Facilities" sequence="1" value="facilities"/>
+                <element inactive_on_update="false" label="Legal" sequence="2" value="legal"/>
+                <element inactive_on_update="false" label="Production" sequence="3" value="production"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="What needed" mandatory="true" max_length="40" name="u_what_needed" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Human Resources 1" sequence="0" value="hr1"/>
+                <element inactive_on_update="false" label="Human Resources 2" sequence="1" value="hr2"/>
+                <element inactive_on_update="false" label="Facilities 1" sequence="2" value="facilities1"/>
+                <element inactive_on_update="false" label="Facilities 2" sequence="3" value="facilities2"/>
+                <element inactive_on_update="false" label="Legal 1" sequence="4" value="legal1"/>
+                <element inactive_on_update="false" label="Legal 2" sequence="5" value="legal2"/>
+                <element inactive_on_update="false" label="production 1" sequence="6" value="production1"/>
+                <element inactive_on_update="false" label="production 2" sequence="7" value="production2"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="when needed" mandatory="true" max_length="40" name="u_when_needed" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" default="Legal 1" label="what needed" mandatory="true" max_length="40" name="what_needed" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Human Resource 1" sequence="0" value="Human Resource 1"/>
+                <element inactive_on_update="false" label="Human resource 2" sequence="1" value="Human resource 2"/>
+                <element inactive_on_update="false" label="Facilities 1" sequence="2" value="Facilities 1"/>
+                <element inactive_on_update="false" label="facilities 2" sequence="3" value="facilities 2"/>
+                <element inactive_on_update="false" label="Legal 1" sequence="4" value="Legal 1"/>
+                <element inactive_on_update="false" label="Legal 2" sequence="5" value="Legal 2"/>
+                <element inactive_on_update="false" label="other" sequence="6" value="other"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="when needed" mandatory="true" max_length="40" name="when_needed" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" label="work notes" max_length="1000" name="work_notes" type="string"/>
+        <index name="index">
+            <element name="requested_by"/>
+        </index>
+        <index name="index2">
+            <element name="u_requested_for"/>
+        </index>
+    </element>
+</database>
